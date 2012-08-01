@@ -1,0 +1,17 @@
+Contact bundle is a simple objective c class which retrieves all the contact list from the iPhone device in the form of a array that is been formed in the fetchcontact class. The class also returns the jason formats for the array. SBJon module have been included to bring in the parsing functionality. 
+The complete flow can be understood in downloading the sample application along with this which used the addressbook framework to fetch the contacts.  
+
+//sample usage of the class
+#import "fetchContacts.h" 
+#import <AddressBook/AddressBook.h>
+#import "JSON.h"
+import the above to the class in which you what to retrieve contacts. Below are the sample code for the usage of the class
+
+//initialte the class
+    fetchContacts *contactCls = [[fetchContacts alloc]init];
+   //gets the contact dictionary 
+    NSMutableDictionary* contactlist =  [contactCls rertieveContactsDictionary];
+    
+    //gets the joson string of contacts in device
+    NSString *contactstring = [contactCls retrieveContactsJason];
+    NSLog(@"the retrieved contacts and joson are : %@  %@", contactlist,contactstring);
